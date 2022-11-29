@@ -1,21 +1,21 @@
 #! /usr/bin/env node
 
-// import figlet from "figlet";
-// import yargs from "yargs/yargs";
-// import inquirer from "inquirer";
-// import touch from "touch";
-// import chalk from "chalk";
-// import fs from 'fs';
-// import parseArgs from 'minimist';
+import figlet from "figlet";
+import yargs from "yargs/yargs";
+import inquirer from "inquirer";
+import touch from "touch";
+import chalk from "chalk";
+import fs from 'fs';
+import parseArgs from 'minimist';
 
-var figlet  =require("figlet");
-const { yargs}  =require("yargs/yargs");
-// const { inquirer}  =require("inquirer");
-const { touch}  =require("touch");
-// const  chalk   = require("chalk");
-const { fs}  =require('fs');
-const   parseArgs   =require('minimist'); 
-const { program } = require('commander');
+// var figlet  =require("figlet");
+// const { yargs}  =require("yargs/yargs");
+// // const { inquirer}  =require("inquirer");
+// const { touch}  =require("touch");
+// // const  chalk   = require("chalk");
+// const { fs}  =require('fs');
+// const   parseArgs   =require('minimist'); 
+// const { program } = require('commander');
 
 
 // program
@@ -28,33 +28,33 @@ const { program } = require('commander');
 // const limit = options.first ? 1 : undefined;
 // console.log(program.args[0].split(options.separator, limit));
 // Displaying
-    figlet('Kookie', function (err, data) {
-        console.log(data); 
-    });
+//     figlet('Kookie', function (err, data) {
+//         console.log(data); 
+//     });
     
-const initial = async () => {
+// const initial = async () => {
 
     
-program
-  .name('string-util')
-  .description('CLI to some JavaScript string utilities')
-  .version('0.8.0');
+// program
+//   .name('string-util')
+//   .description('CLI to some JavaScript string utilities')
+//   .version('0.8.0');
 
-program.command('split')
-  .description('Split a string into substrings and display as an array')
-  .argument('<string>', 'string to split')
-  .option('--first', 'display just the first substring')
-  .option('-s, --separator <char>', 'separator character', ',')
-  .action((str, options) => {
-    const limit = options.first ? 1 : undefined;
-    console.log(str.split(options.separator, limit));
-  });
+// program.command('split')
+//   .description('Split a string into substrings and display as an array')
+//   .argument('<string>', 'string to split')
+//   .option('--first', 'display just the first substring')
+//   .option('-s, --separator <char>', 'separator character', ',')
+//   .action((str, options) => {
+//     const limit = options.first ? 1 : undefined;
+//     console.log(str.split(options.separator, limit));
+//   });
 
-program.parse();
+// program.parse();
 
-}
+// }
 
-initial();
+// initial();
 // var argv = parseArgs(process.argv.slice(2)); 
  
 // init(argv)
@@ -84,6 +84,9 @@ function create_all(moduleName) {
         if (!fs.existsSync(view_dir)) {
             fs.mkdirSync(view_dir);
             touch(`${module}/view/${moduleName}_view.dart`)
+            touch(`${module}/view/${moduleName}_create_view.dart`)
+            touch(`${module}/view/${moduleName}_edit_view.dart`)
+            touch(`${module}/view/${moduleName}_detail_view.dart`)
         }
         if (!fs.existsSync(view_model_dir)) {
             fs.mkdirSync(view_model_dir);
@@ -165,4 +168,4 @@ const greet = async () => {
 }
 
 // Call the askName function
-// greet();
+greet();
